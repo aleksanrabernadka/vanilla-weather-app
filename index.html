@@ -12,30 +12,36 @@
       integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
       crossorigin="anonymous"
     />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <link rel="stylesheet" href="src/styles.css" />
   </head>
   <body>
     <div class="container">
-      <div class="vanilla-weather-app">
-        <h1>Szamoty, Warsaw</h1>
-        <ul>
-          <li>Saturday 22:00</li>
-          <li>Partly cloudy</li>
-        </ul>
-        <div class="row">
-          <div class="col-6">
-            <img
-              src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
-              alt="Partly cloudy"
-            />
-            11 °C | °F
-          </div>
-          <div class="col-6">
+      <div class="weather-app-wrapper">
+        <div class="vanilla-weather-app">
+          <div class="overview">
+            <h1 id="city"></h1>
             <ul>
-              <li>Precipitation: 76%</li>
-              <li>Humidity: 88%</li>
-              <li>Wind: 10 km/h</li>
+              <li>Last updated at: <span id="date"></span></li>
+              <li id="description"></li>
             </ul>
+          </div>
+          <div class="row">
+            <div class="col-6">
+              <div class="d-flex weather-temperature">
+                <img src="" alt="Partly cloudy" id="icon" class="float-left" />
+                <div class="float-left">
+                  <strong id="temperature">11</strong>
+                  <span class="units">°C | <a href="#">°F</a></span>
+                </div>
+              </div>
+            </div>
+            <div class="col-6">
+              <ul>
+                <li>Humidity: <span id="humidity"></span>%</li>
+                <li>Wind: <span id="wind"></span> km/h</li>
+              </ul>
+            </div>
           </div>
         </div>
         <small>
